@@ -113,6 +113,8 @@ proc/get_radio_key_from_channel(var/channel)
 			return
 
 	message = trim_strip_html_properly(message)
+	//message = sanitize_chat(message)
+	message = sanitize_plus(copytext(message, 1, MAX_MESSAGE_LEN))
 
 	if(stat)
 		if(stat == DEAD)
