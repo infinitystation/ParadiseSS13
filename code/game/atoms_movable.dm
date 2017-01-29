@@ -16,6 +16,8 @@
 	var/mob/pulledby = null
 	var/inertia_dir = 0
 
+	glide_size = 8
+
 	var/area/areaMaster
 
 	var/auto_init = 1

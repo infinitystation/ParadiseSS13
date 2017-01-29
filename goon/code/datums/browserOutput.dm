@@ -250,6 +250,7 @@ var/to_chat_src
 		if(findtext(message, "\proper"))
 			message = replacetext(message, "\proper", "")
 
+		message = sanitize_popup(message)
 		var/client/C
 		if(istype(target, /client))
 			C = target
@@ -270,4 +271,4 @@ var/to_chat_src
 		if(flag)
 			output_message += "&[url_encode(flag)]"
 
-		target << output(output_message, "browseroutput:output")
+		target << output(url_encode(message), "browseroutput:output")

@@ -384,6 +384,10 @@ var/round_start_time = 0
 	if((!mode.explosion_in_progress && game_finished) || force_ending)
 		current_state = GAME_STATE_FINISHED
 		auto_toggle_ooc(1) // Turn it on
+		if(update_waiting)
+			force_update_server()
+		if(buildchangechecked)
+			forcechangebuild(nextbuild)
 		spawn
 			declare_completion()
 

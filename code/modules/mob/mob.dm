@@ -960,6 +960,11 @@ var/list/slot_equipment_priority = list( \
 // this function displays the station time in the status panel
 /mob/proc/show_stat_station_time()
 	stat(null, "Station Time: [worldtime2text()]")
+	stat("Server Time: [time2text(world.realtime, "YYYY-MM-DD hh:mm")]")
+	if(currentbuild)
+		stat("Build: [currentbuild.friendlyname]")
+	if(nextbuild && istype(nextbuild))
+		stat("Next Build: [nextbuild.friendlyname]")
 
 // this function displays the shuttles ETA in the status panel if the shuttle has been called
 /mob/proc/show_stat_emergency_shuttle_eta()
