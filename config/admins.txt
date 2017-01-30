@@ -1,0 +1,36 @@
+######################################################################
+# Basically, ckey goes first. Rank goes after the "-"                #
+# Case is not important for ckey.                                    #
+# Case IS important for the rank. However punctuation/spaces are not #
+# Ranks can be anything defined in admin_ranks.txt           	     #
+######################################################################
+
+#Head-Staffs
+bear1ake - Project Lead
+samorey01 - Head Admin
+
+#Admins
+thehero13 - Game Master
+alexmorgan - Game Master
+
+terror4000rus - Game Admin
+
+mrtrololo - Admin
+temblrex - Admin
+redknighthero - Admin
+
+sladkoeshka - Trial Admin
+thedeadangel - Trial Admin
+
+hellpony - Admin Candidate
+neincat - Admin Candidate
+balalayka - Admin Candidate
+Kirill1243 - Admin Candidate
+maestro7228 - Admin Candidate
+
+#Developers
+kuzyxd - Developer
+johnthebastard - Junior Developer
+
+
+quardbreak - Host

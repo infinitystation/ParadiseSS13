@@ -102,11 +102,7 @@
 	if(handle_spam_prevention(msg, MUTE_ADMINHELP, OOC_COOLDOWN))
 		return
 
-	//clean the message if it's not sent by a high-rank admin
-	if(!check_rights(R_SERVER|R_DEBUG,0))
-		msg = sanitize(copytext(msg,1,MAX_MESSAGE_LEN))
-		if(!msg)
-			return
+	msg = sanitize(copytext(msg,1,MAX_MESSAGE_LEN))
 
 	var/recieve_span = "playerreply"
 	var/send_pm_type = " "

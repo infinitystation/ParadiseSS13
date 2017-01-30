@@ -340,6 +340,7 @@ var/world_topic_spam_protect_time = world.timeofday
 
 /world/proc/load_motd()
 	join_motd = file2text("config/motd.txt")
+	join_motd = sanitize_plus_chat(join_motd)
 
 
 /proc/load_configuration()
@@ -348,7 +349,7 @@ var/world_topic_spam_protect_time = world.timeofday
 	config.load("config/game_options.txt","game_options")
 	config.loadsql("config/dbconfig.txt")
 	config.loadoverflowwhitelist("config/ofwhitelist.txt")
-	config.loadbuildlist("builds.txt")
+	config.loadbuildlist("config/builds.txt")
 	// apply some settings from config..
 
 /world/proc/update_status()
@@ -359,7 +360,7 @@ var/world_topic_spam_protect_time = world.timeofday
 
 	s += "<b>[station_name()]</b>";
 	s += " ("
-	s += "<a href=\"http://nanotrasen.se/phpBB3/index.php\">" //Change this to wherever you want the hub to link to.
+	s += "<a href=\"https://infinity.so\">" //Change this to wherever you want the hub to link to.
 	s += "[game_version]"
 	s += "</a>"
 	s += ")"
