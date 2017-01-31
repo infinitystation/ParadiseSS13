@@ -170,22 +170,22 @@ USEWHITELIST
 # SERVER server.net:port
 
 ## Forum address
-# FORUMURL http://example.org
+FORUMURL https://infinity.so
 
 ## Wiki address
-# WIKIURL http://example.org
+WIKIURL https://wiki.infinity.so
 
 ## Rules address
-# RULESURL http://example.org
+RULESURL https://infinity.so/index.php?/topic/3-%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%B0
 
 ## Donations address
 # DONATIONSURL http://example.org
 
 ## Repository address
-# REPOSITORYURL http://example.org
+REPOSITORYURL https://github.com/infinitystation
 
 ## Ban appeals URL - usually for a forum or wherever people should go to contact your admins
-# BANAPPEALS http://example.org
+BANAPPEALS https://infinity.so/index.php?/forum/5-%D1%81%D1%83%D0%B4
 
 ## In-game features
 ## spawns a spellbook which gives object-type spells instead of verb-type spells for the wizard
@@ -199,7 +199,7 @@ LOAD_JOBS_FROM_TXT
 
 ## Remove the # to show a popup 'reply to' window to every non-admin that recieves an adminPM.
 ## The intention is to make adminPMs more visible. (although I fnd popups annoying so this defaults to off)
-POPUP_ADMIN_PM
+#POPUP_ADMIN_PM
 
 ## Remove the # to allow special 'Easter-egg' events on special holidays such as seasonal holidays and stuff like 'Talk Like a Pirate Day' :3 YAARRR
 ALLOW_HOLIDAYS
@@ -301,7 +301,7 @@ PLAYER_REROUTE_CAP 0
 #DISABLE_AWAY_MISSIONS
 
 ## Disable the loading of space ruins
-DISABLE_SPACE_RUINS
+#DISABLE_SPACE_RUINS
 
 ## Uncomment to disable the OOC/LOOC channel by default.
 #DISABLE_OOC

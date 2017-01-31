@@ -137,8 +137,11 @@ var/list/admin_verbs_server = list(
 	/client/proc/toggle_antagHUD_use,
 	/client/proc/toggle_antagHUD_restrictions,
 	/client/proc/set_ooc,
-	/client/proc/reset_ooc
-	)
+	/client/proc/reset_ooc,
+	/client/proc/adminchangebuild,
+	/client/proc/update_server,
+	/client/proc/update_server_round_end
+ 	)
 var/list/admin_verbs_debug = list(
 	/client/proc/cmd_admin_list_open_jobs,
 	/client/proc/Debug2,

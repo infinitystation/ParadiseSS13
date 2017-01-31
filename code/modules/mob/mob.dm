@@ -956,11 +956,14 @@ var/list/slot_equipment_priority = list( \
 				processScheduler.statProcesses()
 
 	statpanel("Status") // Switch to the Status panel again, for the sake of the lazy Stat procs
+	if(client.statpanel == "Status")
+		show_stat_current_build()
 
 // this function displays the station time in the status panel
 /mob/proc/show_stat_station_time()
 	stat(null, "Station Time: [worldtime2text()]")
-	stat("Server Time: [time2text(world.realtime, "YYYY-MM-DD hh:mm")]")
+
+/mob/proc/show_stat_current_build()
 	if(currentbuild)
 		stat("Build: [currentbuild.friendlyname]")
 	if(nextbuild && istype(nextbuild))
