@@ -1,91 +1,68 @@
-# Paradise
+# Infinity Paradise (Изменённый код Paradise)
+[![Build Status](https://travis-ci.org/infinitystation/ParadiseSS13.svg?branch=master)](https://travis-ci.org/infinitystation/ParadiseSS13)
 
-[Website](http://www.nanotrasen.se/) - [Code](https://github.com/ParadiseSS13/Paradise) - [IRC](http://www.nanotrasen.se/phpBB3/viewtopic.php?f=10&t=1113)
+[Веб-сайт сообщества Paradise](http://www.nanotrasen.se/) - [Оригинальный код Paradise](https://github.com/ParadiseSS13/Paradise) - [IRC разработчиков Paradise](http://www.nanotrasen.se/phpBB3/viewtopic.php?f=10&t=1113)
+[Веб-сайт Infinity](https://infinity.so/)
 
 ---
 
-### GETTING THE CODE
-The simplest way to obtain the code is using the github .zip feature.
+### ЗАГРУЗКА
+Есть два способа получить код. Варианты будут описаны ниже:
 
-Click [here](https://github.com/ParadiseSS13/Paradise/archive/master.zip) to get the latest code as a .zip file, then unzip it to wherever you want.
+1. Вы можете скачать напрямую из этого репозитория .zip файл, достаточно просто нажать [суда](https://github.com/infinitystation/ParadiseSS13/archive/master.zip)
 
-The more complicated and easier to update method is using git.  
-You'll need to download git or some client from [here](http://git-scm.com/).  
-When that's installed, right click in any folder and click on "Git Bash".  
-When that opens, type in:
+2. Этот вариант подходит если Вы собираетесь работать с нашим репозиторием, для этого Вам нужен любой Git клиент.
+Откройте командную строку Git клиента и скопируйте в неё следующее:
 
-    git clone https://github.com/ParadiseSS13/Paradise.git
+    git clone https://github.com/infinitystation/ParadiseSS13.git
 
-(hint: hold down ctrl and press insert to paste into git bash)
+Это займёт больше времени на загрузку, но при данном методе вам будет легче принимать изменения, не перекачивая репозиторий.
 
-This will take a while to download, but it provides an easier method for updating.
+### УСТАНОВКА
 
-### INSTALLATION
+Для установки Вам потребуется программа для установки и запуска.
+Взять её Вы можете [тут](http://www.byond.com/).
 
-First-time installation should be fairly straightforward.  
-First, you'll need BYOND installed.  
-You can get it from [here](http://www.byond.com/).
-
-This is a sourcecode-only release, so the next step is to compile the server files.  
-Open paradise.dme by double-clicking it, open the Build menu, and click compile.  
-This'll take a little while, and if everything's done right,
-you'll get a message like this:
+Следующим шагом будет компилирование скачанных файлов.  
+Откройте paradise.dme двойным кликом, нажмите в верхней панели раздел Build и нажмите на кнопку компилирования или нажмите комбинацию клавиш Ctrl+K.  
+Потребуется немного времени на данный процесс, после окончания Вам должно высветиться данное сообщение:
 
     saving paradise.dmb (DEBUG mode)
 
     paradise.dmb - 0 errors, 0 warnings
 
-If you see any errors or warnings,
-something has gone wrong - possibly a corrupt download or the files extracted wrong,
-or a code issue on the main repo.  Ask on IRC.
-
-Once that's done, open up the config folder.  
-You'll want to edit config.txt to set your server location,
-so that all your players don't get disconnected at the end of each round.
-It's recommended you don't turn on the gamemodes with probability 0,
-as they have various issues and aren't currently being tested,
-so they may have unknown and bizarre bugs.
-
-You'll also want to edit admins.txt to remove the default admins and add your own.  
-"Host" is the highest level of access, and the other recommended admin levels for now are
-"Game Admin" and "Moderator".  The format is:
-
-    byondkey - Rank
-
-where the BYOND key must be in lowercase and the admin rank must be properly capitalised.  
-There are a bunch more admin ranks, but these two should be enough for most servers,
-assuming you have trustworthy admins.
-
-Finally, to start the server,
-run Dream Daemon and enter the path to your compiled paradise.dmb file.  
-Make sure to set the port to the one you specified in the config.txt,
-and set the Security box to 'Trusted'.  
-Then press GO and the server should start up and be ready to join.
+Если будут какие либо проблемы с компилированиям то возможно часть файлов была потеряна при загрузке.
+Если проблема была так и не устранена, обратитесь на наш форум за помощью.
 
 ---
 
-### UPDATING
+### КОНФИГУРАЦИЯ
 
-To update an existing installation, first back up your /config and /data folders
-as these store your server configuration, player preferences and banlist.
+Файл config.txt был настроен для игры на нашем сервере, но Вы можете настроить его по своему желанию для локального сервера.
 
-If you used the zip method,
-you'll need to download the zip file again and unzip it somewhere else,
-and then copy the /config and /data folders over.
+Если Вы желаете получить на локальном сервере права администратора, найдите в папке config текстовый файл admins.txt
+Введите в данном файле представленную ниже информацию, заменяя слова "byondkey" на Ваш логин клиента и "rank" на "Admin"
 
-If you used the git method, you simply need to type this in to git bash:
+	byondkey - Rank
+
+Важно: писать свой byond-логин надо заменяя заглавные буквы на строчные, вместо пробелов писать слитно.
+
+---
+
+### ОБНОВЛЕНИЕ
+
+Перед обновлением, рекомендуем Вам сохранить вашу конфигурацию в папке /config если вы вносили туда изменения.
+
+Если вы используете метод распаковки .zip файла:
+Вам нужно скачать .zip файл и распаковать в пустую папку обновлённый билд, после чего перенести ваши конфиги в новый билд.
+
+Если вы используете git метод, введите в консоль клиента следующую команду:
 
     git pull
 
-When this completes, copy over your /data and /config folders again, just in case.
+Когда обновление закончится, перекопируйте сохранённые конфиги обратно, если нужно.
 
-When you have done this, you'll need to recompile the code, but then it should work fine.
-
----
-
-### Configuration
-
-For a basic setup, simply copy every file from config/example to config.
+После обновления перекомпилируйте билд.
 
 ---
 
