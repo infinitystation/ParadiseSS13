@@ -2,6 +2,7 @@
 [![Build Status](https://travis-ci.org/infinitystation/ParadiseSS13.svg?branch=master)](https://travis-ci.org/infinitystation/ParadiseSS13)
 
 [Веб-сайт сообщества Paradise](http://www.nanotrasen.se/) - [Оригинальный код Paradise](https://github.com/ParadiseSS13/Paradise) - [IRC разработчиков Paradise](http://www.nanotrasen.se/phpBB3/viewtopic.php?f=10&t=1113)
+
 [Веб-сайт Infinity](https://infinity.so/)
 
 ---
@@ -9,7 +10,7 @@
 ### ЗАГРУЗКА
 Есть два способа получить код. Варианты будут описаны ниже:
 
-1. Вы можете скачать напрямую из этого репозитория .zip файл, достаточно просто нажать [суда](https://github.com/infinitystation/ParadiseSS13/archive/master.zip)
+1. Вы можете скачать напрямую из этого репозитория .zip файл, достаточно просто нажать [суда](https://github.com/infinitystation/ParadiseSS13/archive/master.zip).
 
 2. Этот вариант подходит если Вы собираетесь работать с нашим репозиторием, для этого Вам нужен любой Git клиент.
 Откройте командную строку Git клиента и скопируйте в неё следующее:
