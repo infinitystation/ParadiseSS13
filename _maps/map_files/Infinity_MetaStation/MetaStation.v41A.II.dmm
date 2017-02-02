@@ -4700,7 +4700,7 @@
 "bMt" = (/obj/structure/window/reinforced{dir = 8},/obj/structure/window/reinforced{dir = 1},/obj/machinery/light/small{dir = 8},/obj/machinery/camera/motion{c_tag = "Mini Satellite Exterior South East"; dir = 4; network = list("SS13","MiniSat")},/turf/simulated/floor/plasteel{icon_state = "dark"},/area/construction/hallway{name = "\improper MiniSat Exterior"})
 "bMu" = (/obj/machinery/telecomms/processor/preset_three,/turf/simulated/floor/bluegrid{icon_state = "gcircuit"; name = "Mainframe Base"; nitrogen = 100; oxygen = 0; temperature = 80},/area/tcommsat/server)
 "bMv" = (/turf/space,/obj/structure/shuttle/engine/propulsion{tag = "icon-propulsion (EAST)"; icon_state = "propulsion"; dir = 4},/turf/simulated/shuttle/wall{icon_state = "swall_f5"; dir = 2},/area/shuttle/transport)
-"bMw" = (/obj/machinery/atmospherics/unary/vent_pump{dir = 1; on = 1; step_x = 0},/turf/simulated/floor/plasteel,/area/hallway/secondary/entry{name = "Arrivals"})
+"bMw" = (/obj/machinery/atmospherics/unary/vent_pump{dir = 1; on = 1},/turf/simulated/floor/plasteel,/area/hallway/secondary/entry{name = "Arrivals"})
 "bMx" = (/turf/space,/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"; pixel_x = 0; tag = ""},/turf/simulated/floor/plating/airless/catwalk,/area/solar/starboard)
 "bMy" = (/turf/space,/obj/structure/cable{d1 = 2; d2 = 8; icon_state = "2-8"; tag = ""},/turf/simulated/floor/plating/airless/catwalk,/area/solar/starboard)
 "bMz" = (/turf/space,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/turf/simulated/floor/plating/airless/catwalk,/area/solar/starboard)
