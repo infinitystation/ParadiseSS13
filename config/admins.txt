@@ -31,6 +31,3 @@ maestro7228 - Admin Candidate
 #Developers
 kuzyxd - Developer
 johnthebastard - Junior Developer
-
-
-quardbreak - Host

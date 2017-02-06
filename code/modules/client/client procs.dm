@@ -306,6 +306,12 @@
 		admins += src
 		holder.owner = src
 
+	var/localhost_addresses = list("127.0.0.1","::1")
+	if(config.localhost_autoadmin)
+		if((!address && !world.port) || (address in localhost_addresses))
+			var/datum/admins/D = new /datum/admins("Host", R_HOST, src.ckey)
+			D.associate(src)
+
 	donator_check()
 
 	//preferences datum - also holds some persistant data for the client (because we may as well keep these datums to a minimum)

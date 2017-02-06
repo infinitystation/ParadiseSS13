@@ -4,6 +4,8 @@
 
 	var/nudge_script_path = "nudge.py"  // where the nudge.py script is located
 
+	var/localhost_autoadmin = 0
+
 	var/log_ooc = 0						// log OOC channel
 	var/log_access = 0					// log login/logout
 	var/log_say = 0						// log client say
@@ -263,6 +265,9 @@
 
 				if("log_ooc")
 					config.log_ooc = 1
+
+				if ("localhost_autoadmin")
+					localhost_autoadmin = 1
 
 				if("log_access")
 					config.log_access = 1
@@ -575,6 +580,12 @@
 
 				if("round_abandon_penalty_period")
 					config.round_abandon_penalty_period = MinutesToTicks(text2num(value))
+
+				if("medal_hub_address")
+					global.medal_hub = value
+
+				if("medal_hub_password")
+					global.medal_pass = value
 
 				if("disable_ooc_emoji")
 					config.disable_ooc_emoji = 1
