@@ -420,7 +420,6 @@ var/round_start_time = 0
 
 
 /datum/controller/gameticker/proc/declare_completion()
-
 	nologevent = 1 //end of round murder and shenanigans are legal; there's no need to jam up attack logs past this point.
 	//Round statistics report
 	var/datum/station_state/end_state = new /datum/station_state()
@@ -475,6 +474,9 @@ var/round_start_time = 0
 	scoreboard()
 	karmareminder()
 
+	// Declare the completion of the station goals
+	mode.declare_station_goal_completion()
+	
 	//Ask the event manager to print round end information
 	event_manager.RoundEnd()
 

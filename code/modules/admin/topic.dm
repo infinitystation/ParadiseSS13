@@ -3115,6 +3115,80 @@
 			error_viewer.showTo(usr, locate(href_list["viewruntime_backto"]), href_list["viewruntime_linear"])
 		else
 			error_viewer.showTo(usr, null, href_list["viewruntime_linear"])
+			
+	else if(href_list["add_station_goal"])
+		if(!check_rights(R_EVENT))
+			return
+		var/list/type_choices = typesof(/datum/station_goal)
+		var/picked = input("Choose goal type") in type_choices|null
+		if(!picked)
+			return
+		var/datum/station_goal/G = new picked()
+		if(picked == /datum/station_goal)
+			var/newname = input("Enter goal name:") as text|null
+			if(!newname)
+				return
+			G.name = newname
+			var/description = input("Enter [command_name()] message contents:") as message|null
+			if(!description)
+				return
+			G.report_message = description
+		message_admins("[key_name_admin(usr)] created \"[G.name]\" station goal.")
+		ticker.mode.station_goals += G
+		modify_goals()
+
+	// Library stuff
+	else if(href_list["library_book_id"])
+		var/isbn = sanitizeSQL(href_list["library_book_id"])
+
+		if(href_list["view_library_book"])
+			var/DBQuery/query_view_book = dbcon.NewQuery("SELECT content, title FROM [format_table_name("library")] WHERE id=[isbn]")
+			if(!query_view_book.Execute())
+				var/err = query_view_book.ErrorMsg()
+				log_game("SQL ERROR viewing book. Error : \[[err]\]\n")
+				return
+
+			var/content = ""
+			var/title = ""
+			while(query_view_book.NextRow())
+				content = query_view_book.item[1]
+				title = html_encode(query_view_book.item[2])
+
+			var/dat = "<pre><code>"
+			dat += "[html_encode(html_to_pencode(content))]"
+			dat += "</code></pre>"
+
+			var/datum/browser/popup = new(usr, "admin_view_book", "[title]", 700, 400)
+			popup.set_content(dat)
+			popup.open(0)
+
+			log_admin("[key_name(usr)] has viewed the book [isbn].")
+			message_admins("[key_name_admin(usr)] has viewed the book [isbn].")
+			return
+
+		else if(href_list["unflag_library_book"])
+			var/DBQuery/query_unflag_book = dbcon.NewQuery("UPDATE [format_table_name("library")] SET flagged = 0 WHERE id=[isbn]")
+			if(!query_unflag_book.Execute())
+				var/err = query_unflag_book.ErrorMsg()
+				log_game("SQL ERROR unflagging book. Error : \[[err]\]\n")
+				return
+
+			log_admin("[key_name(usr)] has unflagged the book [isbn].")
+			message_admins("[key_name_admin(usr)] has unflagged the book [isbn].")
+
+		else if(href_list["delete_library_book"])
+			var/DBQuery/query_delbook = dbcon.NewQuery("DELETE FROM [format_table_name("library")] WHERE id=[isbn]")
+			if(!query_delbook.Execute())
+				var/err = query_delbook.ErrorMsg()
+				log_game("SQL ERROR deleting book. Error : \[[err]\]\n")
+				return
+
+			log_admin("[key_name(usr)] has deleted the book [isbn].")
+			message_admins("[key_name_admin(usr)] has deleted the book [isbn].")
+
+		// Refresh the page
+		src.view_flagged_books()
+
 
 /proc/admin_jump_link(var/atom/target)
 	if(!target) return

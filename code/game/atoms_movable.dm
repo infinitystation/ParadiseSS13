@@ -16,8 +16,6 @@
 	var/mob/pulledby = null
 	var/inertia_dir = 0
 
-	glide_size = 8
-
 	var/area/areaMaster
 
 	var/auto_init = 1
@@ -233,7 +231,7 @@
 			if(isobj(A))
 				if(A.density && !A.throwpass)	// **TODO: Better behaviour for windows which are dense, but shouldn't always stop movement
 					src.throw_impact(A,speed)
-					
+
 /atom/movable/proc/throw_at_fast(atom/target, range, speed, thrower, no_spin)
 	set waitfor = 0
 	throw_at(target, range, speed, thrower, no_spin)
