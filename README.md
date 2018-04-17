@@ -3,7 +3,7 @@
 
 [Веб-сайт сообщества Paradise](http://www.nanotrasen.se/) - [Оригинальный код Paradise](https://github.com/ParadiseSS13/Paradise) - [IRC разработчиков Paradise](http://www.nanotrasen.se/phpBB3/viewtopic.php?f=10&t=1113)
 
-[Веб-сайт Infinity](https://infinity.so/)
+[Веб-сайт Infinity](https://infinity-ss13.ru/) - [Discord (Infinity)](https://discord.gg/3wurS)
 
 ---
 
